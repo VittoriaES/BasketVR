@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreKeeping : MonoBehaviour
 {
-    private int score = O
+    private int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +14,15 @@ public class ScoreKeeping : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Ball")){
+            score += 1;
+            Debug.Log("Score : " + score);
+            
+        }
         
     }
 }
